@@ -62,20 +62,13 @@ public class Level3Support: AbstractHandler
 
 public class DefaultSupport: AbstractHandler
 {
-    private static int code = 00000;
+   
     public DefaultSupport(AbstractHandler next) : base(next)
     {
     }
 
     public override void HandleRequest(AbstractRequest request)
     {
-        if (code != request.GetRequestCode)
-        {
-            Console.WriteLine($"{request.GetRequestCode} is handled by Default Support");
-        }
-        else
-        {
-            base.HandleRequest(request);
-        }
+        Console.WriteLine($"{request.GetRequestCode} is handled by Default Support");
     }
-}
+}   
