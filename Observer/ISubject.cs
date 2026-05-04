@@ -9,5 +9,5 @@ public interface ISubject
         
 public interface IObserver
 {
-    void Update(List<string> news);
+    void Update(string latestNew);
 }

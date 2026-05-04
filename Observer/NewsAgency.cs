@@ -3,7 +3,7 @@ namespace Behavioral_Patterns.Observer;
 public class NewsAgency: ISubject
 {
     private List<IObserver> _observers = [];
-    private List<string> _news = [];
+    private string _latestNew = string.Empty;
     
     public void AddObserver(IObserver observer)
     {
@@ -19,13 +19,13 @@ public class NewsAgency: ISubject
     {
         foreach (var observer in _observers)
         {
-            observer.Update(_news);
+            observer.Update(_latestNew);
         }
     }
 
-    public void PublishNews(string news)
+    public void PublishNews(string latestNew)
     {
-        _news.Add(news);
+        _latestNew = latestNew;
         NotifyObservers();
     }
 }
@@ -39,9 +39,9 @@ public class EmailSubscriber: IObserver
         _email = email;    
     }
     
-    public void Update(List<string> news)
+    public void Update(string latestNew)
     {
-        Console.WriteLine($"[Email]: {_email}, received: {string.Join(", ", news)}");
+        Console.WriteLine($"[Email]: {_email}, received: {latestNew}");
     }
 }
 
@@ -53,8 +53,8 @@ public class SmsSubscriber: IObserver
         _sms = sms;
     }
     
-    public void Update(List<string> news)
+    public void Update(string latestNew)
     {
-        Console.WriteLine($"[SMS]: {_sms}, receive: {string.Join(", ", news)}");
+        Console.WriteLine($"[SMS]: {_sms}, receive: {latestNew}");
     }
 }
