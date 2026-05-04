@@ -1,14 +1,22 @@
 ﻿using Behavioral_Patterns.Chain_Responsability;
+using Behavioral_Patterns.Observer;
 
 public class Program
 {
     public static void Main(string[] args)
     {
-        AbstractHandler support = new Level1Suport(new Level2Support(new Level3Support(new DefaultSupport(null))));
-        
-        support.HandleRequest(new SupportRequest(1));
-        support.HandleRequest(new SupportRequest(2));
-        support.HandleRequest(new SupportRequest(3));
-        support.HandleRequest(new SupportRequest(8493));
+        NewsAgency agency = new NewsAgency();
+
+        IObserver email = new EmailSubscriber("jesus@mail.com");
+        IObserver sms = new SmsSubscriber("+52 123 456");
+
+        agency.AddObserver(email);
+        agency.AddObserver(sms);
+
+        agency.PublishNews("C# 13 released!");
+
+        agency.RemoveObserver(sms);
+
+        agency.PublishNews("Design Patterns are awesome!");
     }
 }
