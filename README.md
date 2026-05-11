@@ -15,5 +15,10 @@ Define una relacion uno-a-muchos entre objetos para que, cuando el sujeto cambie
 
 Carpeta: `Observer/`
 
+### Command (Comando)
+Encapsula una solicitud como un objeto para parametrizar acciones, encolar operaciones y soportar deshacer. Es util para historiales de acciones, macros y desacoplar invocadores de receptores.
+
+Carpeta: `Command/`
+
 ## Proximos pasos
 A medida que se agreguen nuevos patrones, se incorporaran aqui con una descripcion corta y la ruta de su carpeta.
