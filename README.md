@@ -10,6 +10,10 @@ Permite pasar una solicitud a traves de una cadena de manejadores. Cada manejado
 
 Carpeta: `Chain-Responsability/`
 
+### Observer (Observador)
+Define una relacion uno-a-muchos entre objetos para que, cuando el sujeto cambie su estado, todos sus observadores sean notificados automaticamente. Es util para sistemas de eventos, notificaciones y desacoplar emisores de receptores.
+
+Carpeta: `Observer/`
+
 ## Proximos pasos
 A medida que se agreguen nuevos patrones, se incorporaran aqui con una descripcion corta y la ruta de su carpeta.
-
