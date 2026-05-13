@@ -8,10 +8,7 @@ public class Program
 {
     public static void Main(string[] args)
     {
-        IEnumerator playlist = new Playlist().GetEnumerator();
-        while (playlist.MoveNext())
-        {
-            Console.WriteLine(playlist.Current);
-        }
+        foreach (var song in new Playlist())
+            Console.WriteLine(song);
     }
 }
