@@ -1,23 +1,17 @@
-﻿using Behavioral_Patterns.Chain_Responsability;
+﻿
+using System.Collections;
+using System.Globalization;
 using Behavioral_Patterns.Command;
-using Behavioral_Patterns.Observer;
+using Behavioral_Patterns.Iterator;
 
 public class Program
 {
     public static void Main(string[] args)
     {
-        TextEditor editor = new TextEditor();
-        EditorInvoker invoker = new EditorInvoker();
-        invoker.ExecuteCommand(new AddTextCommand(editor, "Hello"));
-        invoker.ExecuteCommand(new AddTextCommand(editor, " World"));
-        invoker.ExecuteCommand(new DeleteTextCommand(editor, 5));
-
-        Console.WriteLine(editor.GetText());
-        invoker.Undo();
-        
-        Console.WriteLine(editor.GetText());
-        invoker.Undo();
-        
-        Console.WriteLine(editor.GetText());
+        IEnumerator playlist = new Playlist().GetEnumerator();
+        while (playlist.MoveNext())
+        {
+            Console.WriteLine(playlist.Current);
+        }
     }
 }
