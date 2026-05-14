@@ -1,31 +1,14 @@
-﻿
-using System.Collections;
-using System.Globalization;
-using Behavioral_Patterns.Command;
-using Behavioral_Patterns.Iterator;
-using Behavioral_Patterns.Mediator;
-using Behavioral_Patterns.Memento;
+﻿using Behavioral_Patterns.State;
 
 public class Program
 {
     public static void Main(string[] args)
     {
-        Editor editor = new Editor();
-        History history = new History();
+        TrafficLight light = new TrafficLight();
 
-        editor.SetText("Version 1");
-        history.Push(editor.Save());
-
-        editor.SetText("Version 2");
-        history.Push(editor.Save());
-
-        editor.SetText("Version 3");
-        Console.WriteLine(editor.GetText()); // Version 3
-
-        editor.Restore(history.Pop());
-        Console.WriteLine(editor.GetText()); // Version 2
-
-        editor.Restore(history.Pop());
-        Console.WriteLine(editor.GetText()); // Version 1
+        for (int i = 0; i < 6; i++)
+        {
+            light.Request();
+        }
     }
 }
