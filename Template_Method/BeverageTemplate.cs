@@ -2,24 +2,20 @@ namespace Behavioral_Patterns.Template_Method;
 
 public abstract class BeverageTemplate
 {
-    public IReadOnlyList<string> Prepare()
+    public void Prepare()
     {
-        List<string> result = new()
-        {
-            BoilWater(),
-            Brew(),
-            PourInCup(),
-            AddCondiments(),
-        };
-
-        return result;
+        
+        BoilWater();
+        Brew();
+        PourInCup();
+        AddCondiments();
     }
 
-    public string BoilWater() => "Boiling water...";
+    public void BoilWater() => Console.WriteLine("Boiling water...");
 
-    public abstract string Brew();
+    public abstract void Brew();
 
-    public string PourInCup() => "Pouring into cup...";
+    public void PourInCup() => Console.WriteLine("Pouring into cup...");
 
-    public virtual string AddCondiments() => "Adding suggar...";
+    public virtual void AddCondiments() {}
 }

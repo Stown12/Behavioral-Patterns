@@ -8,16 +8,8 @@ public class Program
         BeverageTemplate tea = new Tea();
         BeverageTemplate coffee = new Coffee();
 
-        foreach (var step in tea.Prepare())
-        {
-            Console.WriteLine(step);
-        }
-
+        tea.Prepare();
         Console.WriteLine("---");
-
-        foreach (var step in coffee.Prepare())
-        {
-            Console.WriteLine(step);
-        }
+        coffee.Prepare();
     }
 }
