@@ -21,13 +21,13 @@ public class Store
 
 public class Book : IProduct
 {
-    public string _title { get; private set; }
-    public decimal _price { get; private set; }
+    public string Title { get; private set; }
+    public decimal Price { get; private set; }
 
     public Book(string title, decimal price)
     {
-        _title = title;
-        _price = price;
+        Title = title;
+        Price = price;
     }
     
     public void Accept(IProductVisitor visitor)

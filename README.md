@@ -30,5 +30,29 @@ Permite recorrer colecciones sin exponer su estructura interna. Es util para lis
 
 Carpeta: `Iterator/`
 
-## Proximos pasos
-A medida que se agreguen nuevos patrones, se incorporaran aqui con una descripcion corta y la ruta de su carpeta.
+### Memento (Memento)
+Permite guardar y restaurar el estado interno de un objeto sin violar el encapsulamiento. Es util para deshacer/rehacer o snapshots de estado.
+
+Carpeta: `Memento/`
+
+### State (Estado)
+Permite que un objeto cambie su comportamiento cuando cambia su estado interno. Es util para maquinas de estados como semaforos o flujos con estados.
+
+Carpeta: `State/`
+
+### Template Method (Metodo Plantilla)
+Define el esqueleto de un algoritmo y delega pasos a las subclases. Es util para reutilizar logica comun y variar pasos especificos.
+
+Carpeta: `Template_Method/`
+
+### Strategy (Estrategia)
+Define una familia de algoritmos intercambiables y los encapsula. Es util para seleccionar dinamicamente comportamientos como descuentos o reglas.
+
+Carpeta: `Strategy/`
+
+### Visitor (Visitante)
+Permite agregar nuevas operaciones a una estructura de objetos sin modificar sus clases. Es util para reportes, calculos o recorridos especializados.
+
+Carpeta: `Visitor/`
+
+

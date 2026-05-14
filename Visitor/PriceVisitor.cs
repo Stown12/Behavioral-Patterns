@@ -5,7 +5,7 @@ public class PriceVisitor: IProductVisitor
     public decimal TotalPrice { get; set; }
     public void VisitBook(Book book)
     {
-        TotalPrice += book._price;
+        TotalPrice += book.Price;
     }
 
     public void VisitElectronics(Electronics electronics)
@@ -20,7 +20,7 @@ public class ExportVisitor: IProductVisitor
 {
     public void VisitBook(Book book)
     {
-        Console.WriteLine($"[BOOK] {book._title} - ${book._price}");
+        Console.WriteLine($"[BOOK] {book.Title} - ${book.Price}");
     }
 
     public void VisitElectronics(Electronics electronics)
