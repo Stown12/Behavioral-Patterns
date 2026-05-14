@@ -2,12 +2,12 @@ namespace Behavioral_Patterns.Strategy;
 
 public interface IDiscountStrategy
 {
-    Decimal Calcultate(decimal price);
+    Decimal Calculate(decimal price);
 }
 
 public class NoDiscount: IDiscountStrategy
 {
-    public decimal Calcultate(decimal price) => price;
+    public decimal Calculate(decimal price) => price;
 }
 
 public class PercentageDiscount: IDiscountStrategy
@@ -18,7 +18,7 @@ public class PercentageDiscount: IDiscountStrategy
         _percentage = percentage;
     }
     
-    public decimal Calcultate(decimal price) => price - (price * _percentage / 100);
+    public decimal Calculate(decimal price) => price - (price * _percentage / 100);
 }
 
 public class FixedDiscount: IDiscountStrategy
@@ -29,5 +29,5 @@ public class FixedDiscount: IDiscountStrategy
         _fixed = fixedDiscount;
     }
     
-    public decimal Calcultate(decimal price) => price - _fixed;
+    public decimal Calculate(decimal price) => price - _fixed;
 }

@@ -10,6 +10,6 @@ public class ShoppingCart
         _amount = amount;
     }
     
-    public decimal GetTotal() => _discountStrategy.Calcultate(_amount);
+    public decimal GetTotal() => _discountStrategy.Calculate(_amount);
     public void SetDiscount(IDiscountStrategy discountStrategy) => _discountStrategy = discountStrategy;
 }

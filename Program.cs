@@ -1,20 +1,22 @@
 ﻿using Behavioral_Patterns.State;
 using Behavioral_Patterns.Strategy;
 using Behavioral_Patterns.Template_Method;
+using Behavioral_Patterns.Visitor;
 
 public class Program
 {
     public static void Main(string[] args)
     {
-        ShoppingCart cart = new ShoppingCart(150.00m);
+        Store store = new Store();
+        store.Add(new Book("Clean Code", 35.00m));
+        store.Add(new Book("Design Patterns", 45.00m));
+        store.Add(new Electronics("Laptop", 1200.00m, 2));
 
-        cart.SetDiscount(new NoDiscount());
-        Console.WriteLine($"No discount: ${cart.GetTotal()}");
+        PriceVisitor price = new PriceVisitor();
+        store.Accept(price);
+        Console.WriteLine($"Total: ${price.GetTotal()}");
 
-        cart.SetDiscount(new PercentageDiscount(10)); // 10% off
-        Console.WriteLine($"10% off: ${cart.GetTotal()}");
-
-        cart.SetDiscount(new FixedDiscount(20)); // $20 off
-        Console.WriteLine($"$20 off: ${cart.GetTotal()}");
+        ExportVisitor export = new ExportVisitor();
+        store.Accept(export);
     }
 }
