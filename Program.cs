@@ -1,14 +1,23 @@
 ﻿using Behavioral_Patterns.State;
+using Behavioral_Patterns.Template_Method;
 
 public class Program
 {
     public static void Main(string[] args)
     {
-        TrafficLight light = new TrafficLight();
+        BeverageTemplate tea = new Tea();
+        BeverageTemplate coffee = new Coffee();
 
-        for (int i = 0; i < 6; i++)
+        foreach (var step in tea.Prepare())
         {
-            light.Request();
+            Console.WriteLine(step);
+        }
+
+        Console.WriteLine("---");
+
+        foreach (var step in coffee.Prepare())
+        {
+            Console.WriteLine(step);
         }
     }
 }

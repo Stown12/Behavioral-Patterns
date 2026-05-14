@@ -59,7 +59,7 @@ public class GreenState: ITrafficLightState
     public void Display()
     {
         Console.WriteLine("[GREEN] GO!!");
-        _context.SetState(_context.GetYellowState());
+        Handle(_context);
     }
 }
 
